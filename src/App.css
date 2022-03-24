@@ -1,38 +1,188 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.main {
+  position: relative;
+  z-index: 0;
+  width: 100vw;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.loading {
+  width: 6rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  font-weight: 500;
 }
+.landing {
+  background-color: rgba(255, 255, 255, 0.26);
+  width: 100%;
+  min-height: 100vh;
+}
+.footer {
+  height: 3rem;
+}
+.navbar {
+  background-color: rgba(0, 0, 0, 0.384);
+  height: clamp(3.2rem, 8vw, 4.3rem);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 max(1rem, 6%);
+}
+.brandname {
+  color: rgb(0, 255, 200);
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+}
+.navcart {
+  position: relative;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  width: clamp(1.6rem, 5vw, 2.2rem);
+
+  margin-top: 1rem;
+}
+.carticon {
+  width: 100%;
+  height: auto;
+  color: aliceblue;
+}
+.countdiv {
+  position: absolute;
+  width: 75%;
+  height: 68%;
+  background-color: rgb(255, 139, 139);
+  left: 50%;
+  top: -20%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  font-size: 1.15rem;
+  font-weight: 500;
+}
+.cartcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.heading {
+  font-size: 2rem;
+  font-weight: 400;
+  width: max(20rem, 60%);
+
+  text-align: center;
+}
+.itemscontainer {
+  width: clamp(22rem, 60%, 50rem);
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+  padding: 1rem 0;
+}
+.itemcontainer {
+  width: 100%;
+  display: flex;
+  flex: 0 auto 0;
+  flex-direction: row;
+  justify-content: space-between;
+
+  height: max(6rem, 5vw);
+}
+.imagecon {
+  width: max(6rem, 5vw);
+  height: max(6rem, 5vw);
+
+  background-color: rgb(255, 255, 255);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image {
+  width: 93%;
+  height: 93%;
+  object-fit: cover;
+}
+.desccon {
+  flex-grow: 4;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: max(6rem, 5vw);
+  padding: 0 0 0 1.2rem;
+}
+.title {
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+  letter-spacing: 0.1rem;
+  font-weight: 600;
+}
+.price {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-bottom: 0.8rem;
+}
+.remove {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgb(0, 184, 184);
+  cursor: pointer;
+}
+.countcontrolcon {
+  width: clamp(2.2rem, 5vw, 3.5rem);
+  height: max(6rem, 5vw);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.arrow {
+  font-size: 3.5rem;
+  color: rgb(0, 199, 99);
+
+  cursor: pointer;
+}
+.itemcount {
+  font-size: 1.5em;
+}
+.totalcontainer {
+  width: clamp(22rem, 62%, 52rem);
+
+  min-height: 5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  font-weight: 600;
+  border-top: 0.2rem solid rgb(0, 134, 158);
+  padding: 0.3rem max();
+}
+.totalcontainer * {
+  font-weight: 700;
+  color: rgb(0, 134, 158);
+}
+.clearbtn {
+  width: 14rem;
+  height: 2.8rem;
+  border-radius: 0.3rem;
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
+  cursor: pointer;
+}
+.emptytext {
+  padding-top: 5rem;
+  text-align: center;
+  color: rgb(0, 184, 184);
 }
