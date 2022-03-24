@@ -1,7 +1,8 @@
 import React from "react";
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
+import { RemoveConsumer, CountConsumer } from "./UserContext";
 
-const Item = ({ item, itemCountHandler, removeItemHandler }) => {
+const Item = ({ item }) => {
   return (
     <div className="itemcontainer">
       <div className="imagecon">
@@ -11,21 +12,36 @@ const Item = ({ item, itemCountHandler, removeItemHandler }) => {
       <div className="desccon">
         <div className="title">{item.title}</div>
         <div className="price">&#x20b9;{item.price}</div>
-        <div className="remove" onClick={(e) => removeItemHandler(item.id, e)}>
-          remove
-        </div>
+        <RemoveConsumer>
+          {(removeItemHandler) => {
+            return (
+              <div
+                className="remove"
+                onClick={(e) => removeItemHandler(item.id, e)}
+              >
+                remove
+              </div>
+            );
+          }}
+        </RemoveConsumer>
       </div>
-      <div className="countcontrolcon">
-        <RiArrowUpSLine
-          className="arrow up"
-          onClick={(e) => itemCountHandler(item.id, true)}
-        />
-        <span className="itemcount">{item.count}</span>
-        <RiArrowDownSLine
-          className="arrow down"
-          onClick={(e) => itemCountHandler(item.id, false)}
-        />
-      </div>
+      <CountConsumer>
+        {(itemCountHandler) => {
+          return (
+            <div className="countcontrolcon">
+              <RiArrowUpSLine
+                className="arrow up"
+                onClick={(e) => itemCountHandler(item.id, true)}
+              />
+              <span className="itemcount">{item.count}</span>
+              <RiArrowDownSLine
+                className="arrow down"
+                onClick={(e) => itemCountHandler(item.id, false)}
+              />
+            </div>
+          );
+        }}
+      </CountConsumer>
     </div>
   );
 };

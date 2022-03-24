@@ -1,7 +1,7 @@
 import React from "react";
 import Item from "./Item";
 
-const Items = ({ itemsData, itemCountHandler, removeItemHandler }) => {
+const Items = ({ itemsData }) => {
   return (
     <div className="itemscontainer">
       {itemsData.map((item) => {
@@ -9,8 +9,8 @@ const Items = ({ itemsData, itemCountHandler, removeItemHandler }) => {
           <Item
             key={item.id}
             item={item}
-            itemCountHandler={itemCountHandler}
-            removeItemHandler={removeItemHandler}
+            // itemCountHandler={itemCountHandler}
+            // removeItemHandler={removeItemHandler}
           />
         );
       })}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Items from "./Items";
 import itemsData from "./Data";
+import { CountProvider, RemoveProvider } from "./UserContext";
 
 const CartContainer = ({ handleNavItemsCountChange, handleClearBtnClick }) => {
   const initState = {
@@ -104,11 +105,16 @@ const CartContainer = ({ handleNavItemsCountChange, handleClearBtnClick }) => {
         Your cart has <span className="totalcount">{states.totalCount}</span>{" "}
         items
       </h2>
-      <Items
-        itemsData={states.items}
-        itemCountHandler={itemCountHandler}
-        removeItemHandler={removeItemHandler}
-      />
+      <CountProvider value={itemCountHandler}>
+        <RemoveProvider value={removeItemHandler}>
+          <Items
+            itemsData={states.items}
+            // itemCountHandler={itemCountHandler}
+            //   removeItemHandler={removeItemHandler}
+          />
+        </RemoveProvider>
+      </CountProvider>
+
       <div className="totalcontainer">
         <div>Total</div>
         <div>

@@ -5,12 +5,15 @@ import CartContainer from "./CartContainer";
 const Landing = () => {
   const [navCount, setNavCount] = useState(0);
   const [isCartCleared, setIsCartCleared] = useState(false);
+
   const handleNavItemsCountChange = (tTotalCount) => {
     setNavCount(tTotalCount);
   };
+
   const handleClearBtnClick = () => {
     setIsCartCleared(true);
   };
+
   return (
     <div className="landing">
       <Navbar navCount={navCount} />
