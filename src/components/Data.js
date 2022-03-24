@@ -10,7 +10,7 @@ export default [
     id: 2,
     title: "Nike Revolt Trainers",
     price: 2499.99,
-    img: "./cart_ReactJS/images/28530-3-nike-shoes-transparent-thumb.png",
+    img: "./images/28530-3-nike-shoes-transparent-thumb.png",
     count: 1,
   },
 
@@ -18,7 +18,7 @@ export default [
     id: 3,
     title: "Apple watch",
     price: 11999.99,
-    img: "./cart_ReactJS/images/noise-watch-colorfit-pro-2-oxy.png",
+    img: "./images/noise-watch-colorfit-pro-2-oxy.png",
     count: 1,
   },
   {
@@ -39,7 +39,7 @@ export default [
     id: 6,
     title: "Chanel parfum",
     price: 3999.99,
-    img: "./cart_ReactJS/images/perfume_PNG10259.png",
+    img: "./images/perfume_PNG10259.png",
     count: 1,
   },
 ];
